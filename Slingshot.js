@@ -16,6 +16,14 @@ class SlingShot{
 
     fly(){
         this.sling.bodyA = null;
+        fill(0);
+    
+    text ("press SPACE for another turn",500,100);
+    }
+    attach(body){
+        this.sling.bodyA=body;
+        
+        
     }
 
     display(){
@@ -43,6 +51,7 @@ class SlingShot{
             
             pop();
         }
+
     }
     
 }

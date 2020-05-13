@@ -7,6 +7,7 @@ var engine, world;
 var box1, pig1;
 var backgroundImg,platform;
 var bird, slingShot;
+var x=0;
 
 function preload() {
     backgroundImg = loadImage("sprites/bg.png");
@@ -43,7 +44,17 @@ function setup(){
 }
 
 function draw(){
-    background(backgroundImg);
+    background(255);
+    if( x==1){
+    textSize(20);
+    fill(0);
+    text ("press SPACE for another turn",500,100);
+
+
+
+
+    }
+
     Engine.update(engine);
     //strokeWeight(4);
     box1.display();
@@ -74,4 +85,15 @@ function mouseDragged(){
 
 function mouseReleased(){
     slingshot.fly();
+    
+    x=1
+    
+}
+function keyPressed(){
+     if (keyCode==32){
+       slingshot.attach(bird.body);
+       x=0
+    
+     } 
+
 }
